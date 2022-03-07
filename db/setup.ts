@@ -1,6 +1,3 @@
-export { join } from "https://deno.land/std@0.128.0/path/mod.ts";
-export { walkSync } from "https://deno.land/std@0.128.0/fs/mod.ts";
-
 import { Client, Pool } from "../deps.ts";
 
 const DB_URL = Deno.env.get("TEST_DB_URL") || "";
