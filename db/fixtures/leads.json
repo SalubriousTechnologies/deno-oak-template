@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "name": "'Medicals'",
+    "created_at": "'2022-03-07T11:03:05.0000+05:30'"
+  },
+  {
+    "id": 2,
+    "name": "'Another Medicals'"
+  },
+  {
+    "id": 3,
+    "name": "'And Another Medicals'"
+  },
+  {
+    "id": 4,
+    "name": "'And yet Another Medicals'"
+  }
+]
