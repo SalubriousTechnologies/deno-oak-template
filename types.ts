@@ -1,3 +1,3 @@
-type Next = () => Promise<void>;
+type Next = () => Promise<unknown>;
 
 export type { Next };

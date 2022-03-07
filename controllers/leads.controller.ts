@@ -1,42 +1,33 @@
 import type { Context, RouterContext } from "../deps.ts";
 
-import { Evaluation, findEvaluation } from "../models/Lead.ts";
+import { Lead, findLead } from "../models/Lead.ts";
 
 interface LeadData {
-  evaluatorId: number;
-  registrationNumber: string;
-  quotationOffered: number;
+  name: string;
 }
 
 export async function addLead(ctx: Context) {
-  //   const { evaluatorId, registrationNumber, quotationOffered }: EvaluationData =
-  //     await ctx.request.body().value;
-  //   const { isValid, message } = inputValidationForEvaluation(
-  //     evaluatorId,
-  //     registrationNumber,
-  //     quotationOffered
-  //   );
-  //   if (!isValid) {
-  //     ctx.response.status = 422;
-  //     ctx.response.body = { message };
-  //   } else {
-  //     try {
-  //       const evaluation = new Evaluation(
-  //         evaluatorId,
-  //         registrationNumber,
-  //         quotationOffered
-  //       );
-  //       await evaluation.save();
-  //       ctx.response.status = 201;
-  //     } catch (e) {
-  //       console.error(e);
-  //       ctx.response.status = 422;
-  //       return;
-  //     }
-  //   }
-  await Promise.resolve();
-  ctx.response.status = 201;
-  return;
+  const { name }: LeadData = await ctx.request.body().value;
+  // const { isValid, message } = inputValidationForEvaluation(
+  //   evaluatorId,
+  //   registrationNumber,
+  //   quotationOffered
+  // );
+  // if (!isValid) {
+  //   ctx.response.status = 422;
+  //   ctx.response.body = { message };
+  //   return;
+  // } else {
+  try {
+    const lead = new Lead(name);
+    await lead.save();
+    ctx.response.status = 201;
+  } catch (e) {
+    console.error(e);
+    ctx.response.status = 422;
+    return;
+  }
+  // }
 }
 
 export async function showLead(ctx: RouterContext<"/lead/:id">) {

@@ -93,4 +93,4 @@ async function cleanupTable(filename: string) {
 }
 
 await cleanUpFixtures();
-await setupFixtures("leads");
+// await setupFixtures("leads");
