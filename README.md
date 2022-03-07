@@ -16,7 +16,7 @@ This repository presently uses as default:
 Planned changes and additions to this are as indicated:
 
 - [ ] Better logging solution
-- [ ] Serving through the http server provided by deno_std
+- [ ] Cors handling
 - [ ] ability to expose webhooks
 - [ ] binary for api key generator
 - [ ] web socket connections implementation
